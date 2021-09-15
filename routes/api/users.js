@@ -13,7 +13,8 @@ const auth = require("../../middleware/auth");
 router.post(
   "/",
   [
-    check("name", "Name is required").not().isEmpty(),
+    check("firstName", "first name is required").not().isEmpty(),
+    check("lastName", "last name is required").not().isEmpty(),
     check("email", "Please include a valid email").isEmail().normalizeEmail(),
     // body("email").custom((value) => {
     //   return User.findOne({ value }).then((user) => {
@@ -32,7 +33,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { name, email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
     try {
       // See if user exists
       let user = await User.findOne({ email });
@@ -50,7 +51,8 @@ router.post(
       });
 
       user = new User({
-        name,
+        firstName,
+        lastName,
         email,
         avatar,
         password,
@@ -90,7 +92,7 @@ router.post(
 
 router.get("/", async (req, res) => {
   try {
-    const users = await User.find().populate("owner", ["name"]);
+    const users = await User.find().populate("owner", ["firstName"]);
     res.json(users);
   } catch (err) {
     console.error(err.message);
