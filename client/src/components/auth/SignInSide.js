@@ -61,7 +61,6 @@ export default function SignInSide() {
       const cookies = new Cookies();
       cookies.set("token", token, { path: "/" /*, expires: d*/ });
       ReactDOM.render(<Home />, document.getElementById("root"));
-      console.log(res.data);
     } catch (err) {
       //TODO set snackbar Here
       console.error(err);
@@ -81,7 +80,7 @@ export default function SignInSide() {
           md={9}
           sx={{
             backgroundImage:
-              "url(https://source.unsplash.com/1600x900/?office,sofa)",
+              "url(https://source.unsplash.com/1600x900/?design)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -90,8 +89,7 @@ export default function SignInSide() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-        />
-
+        ></Grid>
         <Grid item xs={12} sm={5} md={3} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -102,7 +100,7 @@ export default function SignInSide() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "#232369" }}>
               <FaceOutlinedIcon fontSize='large' />
             </Avatar>
             <Typography component='h1' variant='h5'>
@@ -143,6 +141,7 @@ export default function SignInSide() {
                 type='submit'
                 fullWidth
                 variant='contained'
+                style={{ background: "#232369", height: 50 }}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In

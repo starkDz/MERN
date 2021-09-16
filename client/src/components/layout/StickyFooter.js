@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import NavBar from "./NavBar";
+
 function Copyright() {
   return (
     <Typography variant='body2' color='text.secondary'>
@@ -28,6 +29,7 @@ export default function StickyFooter() {
       }}
     >
       <NavBar />
+
       <CssBaseline />
       <Container
         component='main'
@@ -46,9 +48,10 @@ export default function StickyFooter() {
               : theme.palette.grey[800],
         }}
       >
+        <Box sx={{ flexGrow: 1 }} />
         <Container maxWidth='sm'>
           <Typography variant='body1'>
-            My sticky footer can be found here.
+            Gestion materials informatiques.
           </Typography>
           <Copyright />
         </Container>
