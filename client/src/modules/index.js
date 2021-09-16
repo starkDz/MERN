@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
 
 import Personnes from "./Personnes";
@@ -17,16 +18,16 @@ import Statistique from "./Statistiques";
 export default [
   Dashboard,
   Catalogue,
-  Document,
   Magasin,
-  Statistique,
-  History,
-  Personnes,
+  Document,
   Fournisseur,
-  Configurations,
+  Statistique,
   Reparation,
-  Documentation,
-  Messagerie,
-  Control,
+  // Configurations,
+  // History,
+  // Personnes,
+  // Documentation,
+  // Messagerie,
+  // Control,
   A_Propos,
 ];

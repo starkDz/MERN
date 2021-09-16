@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-import HomeIcon from "@material-ui/icons/Home";
-
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 const Dashboard = () => <Fragment>Dashboard</Fragment>;
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -9,5 +8,5 @@ export default {
     component: Dashboard,
   },
   name: "Dashboard",
-  icon: <HomeIcon />,
+  icon: <DashboardOutlinedIcon />,
 };

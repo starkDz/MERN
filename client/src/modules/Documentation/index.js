@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
-const Documentation = () => <div></div>;
+const Documentation = () => <div>Documentation</div>;
 
 export default {
   routeProps: {

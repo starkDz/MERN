@@ -17,15 +17,15 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
+import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import Badge from "@mui/material/Badge";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SignInSide from "../auth/SignInSide";
 import modules from "../../modules";
-const drawerWidth = 250;
+const drawerWidth = 220;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -91,7 +91,6 @@ const Drawer = styled(MuiDrawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
-
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -105,6 +104,7 @@ export default function MiniDrawer() {
   const signOut = () => {
     ReactDOM.render(<SignInSide />, document.getElementById("root"));
   };
+
   return (
     <Router>
       <Box sx={{ display: "flex" }}>
@@ -141,7 +141,7 @@ export default function MiniDrawer() {
                 color='inherit'
               >
                 <Badge badgeContent={4} color='error'>
-                  <MailIcon />
+                  <MailOutlineOutlinedIcon />
                 </Badge>
               </IconButton>
               <IconButton
@@ -150,7 +150,7 @@ export default function MiniDrawer() {
                 color='inherit'
               >
                 <Badge badgeContent={17} color='error'>
-                  <NotificationsIcon />
+                  <NotificationsActiveOutlinedIcon />
                 </Badge>
               </IconButton>
               <IconButton
@@ -160,7 +160,7 @@ export default function MiniDrawer() {
                 aria-haspopup='true'
                 color='inherit'
               >
-                <AccountCircle />
+                <AccountCircleOutlinedIcon />
               </IconButton>
               <Box style={{ width: 20 }}></Box>
               <IconButton

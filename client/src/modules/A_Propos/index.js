@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import ContactSupportOutlinedIcon from "@mui/icons-material/ContactSupportOutlined";
 
 const A_Propos = () => <div>A propos</div>;
 
@@ -10,5 +10,5 @@ export default {
     component: A_Propos,
   },
   name: "A Propos",
-  icon: <ContactSupportIcon color='secondary' />,
+  icon: <ContactSupportOutlinedIcon color='secondary' />,
 };

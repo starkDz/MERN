@@ -36,6 +36,7 @@ export default function StickyFooter() {
         sx={{ mt: 8, mb: 2 }}
         maxWidth='sm'
       ></Container>
+      <Box sx={{ flexGrow: 1 }} />
       <Box
         component='footer'
         sx={{
@@ -48,8 +49,7 @@ export default function StickyFooter() {
               : theme.palette.grey[800],
         }}
       >
-        <Box sx={{ flexGrow: 1 }} />
-        <Container maxWidth='sm'>
+        <Container maxWidth='sm' style={{ textAlign: "center" }}>
           <Typography variant='body1'>
             Gestion materials informatiques.
           </Typography>

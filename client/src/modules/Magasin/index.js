@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import ArchiveIcon from "@material-ui/icons/Archive";
-const Magasin = () => <div></div>;
+import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
+const Magasin = () => <div>Magasin</div>;
 export default {
   routeProps: {
     path: "/Magasin",
@@ -9,5 +9,5 @@ export default {
   },
 
   name: "Magasin",
-  icon: <ArchiveIcon />,
+  icon: <ArchiveOutlinedIcon />,
 };

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import BuildIcon from "@material-ui/icons/Build";
-const Reparation = () => <div></div>;
+import BuildCircleOutlinedIcon from "@mui/icons-material/BuildCircleOutlined";
+const Reparation = () => <div>Maintenance</div>;
 
 export default {
   routeProps: {
@@ -9,5 +9,5 @@ export default {
     component: Reparation,
   },
   name: "Maintenance",
-  icon: <BuildIcon color='secondary' />,
+  icon: <BuildCircleOutlinedIcon color='secondary' />,
 };

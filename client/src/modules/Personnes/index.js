@@ -10,7 +10,7 @@ associer un profile pour l utilisateur
 
 import React from "react";
 import PersonIcon from "@material-ui/icons/Person";
-const Personnes = () => <div></div>;
+const Personnes = () => <div>Utilisateur</div>;
 
 export default {
   routeProps: {

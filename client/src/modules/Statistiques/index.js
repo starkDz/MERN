@@ -1,5 +1,5 @@
 import React from "react";
-import TimelineIcon from "@material-ui/icons/Timeline";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 
 const Statistique = () => <div>Statistique Module</div>;
 
@@ -10,5 +10,5 @@ export default {
   },
 
   name: "Statistique",
-  icon: <TimelineIcon color='secondary' />,
+  icon: <PieChartOutlineOutlinedIcon color='secondary' />,
 };

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
-import DescriptionIcon from "@material-ui/icons/Description";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
-const Document = () => <div></div>;
+const Document = () => <div>Documents</div>;
 
 export default {
   routeProps: {
@@ -11,5 +11,5 @@ export default {
   },
 
   name: "Documents",
-  icon: <DescriptionIcon />,
+  icon: <DescriptionOutlinedIcon />,
 };

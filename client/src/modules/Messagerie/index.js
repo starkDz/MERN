@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-const Messagerie = () => <div></div>;
+const Messagerie = () => <div>Messagerie</div>;
 
 export default {
   routeProps: {
