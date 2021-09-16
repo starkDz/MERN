@@ -9,7 +9,6 @@ import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
@@ -17,6 +16,8 @@ import ReactDOM from "react-dom";
 import SignUp from "./SignUp";
 import Home from "../layout/Home";
 import FaceOutlinedIcon from "@material-ui/icons/FaceOutlined";
+import Cookies from "universal-cookie";
+
 function Copyright(props) {
   return (
     <Typography
@@ -54,6 +55,11 @@ export default function SignInSide() {
           "Access-Control-Allow-Origin": "*",
         },
       });
+      const token = res.data.token;
+      let d = new Date();
+      d.setTime(d.getTime() + 2 * 60 * 1000);
+      const cookies = new Cookies();
+      cookies.set("token", token, { path: "/" /*, expires: d*/ });
       ReactDOM.render(<Home />, document.getElementById("root"));
       console.log(res.data);
     } catch (err) {
@@ -75,7 +81,7 @@ export default function SignInSide() {
           md={9}
           sx={{
             backgroundImage:
-              "url(https://source.unsplash.com/1600x900/?interior)",
+              "url(https://source.unsplash.com/1600x900/?office,sofa)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -85,6 +91,7 @@ export default function SignInSide() {
             backgroundPosition: "center",
           }}
         />
+
         <Grid item xs={12} sm={5} md={3} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -96,7 +103,7 @@ export default function SignInSide() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <FaceOutlinedIcon />
+              <FaceOutlinedIcon fontSize='large' />
             </Avatar>
             <Typography component='h1' variant='h5'>
               Sign in

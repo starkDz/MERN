@@ -8,7 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import FaceOutlinedIcon from "@material-ui/icons/FaceOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -41,7 +41,7 @@ export default function SignUp() {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     // eslint-disable-next-line no-console
-    console.log("start register");
+    console.log(data.get("check"));
     const user = {
       email: data.get("email"),
       password: data.get("password"),
@@ -85,7 +85,7 @@ export default function SignUp() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+            <FaceOutlinedIcon fontSize='large' />
           </Avatar>
           <Typography component='h1' variant='h5'>
             Sign up
@@ -153,7 +153,12 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
-                    <Checkbox value='allowExtraEmails' color='primary' />
+                    <Checkbox
+                      value='allowExtraEmails'
+                      color='primary'
+                      id='check'
+                      name='check'
+                    />
                   }
                   label='I want to receive inspiration, marketing promotions and updates via email.'
                 />

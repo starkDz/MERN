@@ -176,12 +176,12 @@ export default function PrimarySearchAppBar() {
             variant='h6'
             noWrap
             component='div'
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { sm: "block" } }}
           >
             Material-UI
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Search>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -189,7 +189,7 @@ export default function PrimarySearchAppBar() {
               placeholder='Search…'
               inputProps={{ "aria-label": "search" }}
             />
-          </Search>
+          </Search> */}
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size='large'
