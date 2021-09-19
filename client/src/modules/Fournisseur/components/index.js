@@ -5,6 +5,8 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -18,10 +20,14 @@ const Fournisseur = styled(Box)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "left",
   paddingLeft: 20,
-  marginTop: 5,
-  height: 50,
+  borderTopRightRadius: 5,
+  borderBottomRightRadius: 5,
+  borderLeft: "4px solid  #232369",
+  padding: 15,
   "&:hover": {
-    textAlign: "center",
+    cursor: "pointer",
+    background: "#F0F2FF",
+    borderLeft: "4px solid  #5dcf0f",
   },
 }));
 const Detail = styled(Paper)(({ theme }) => ({
@@ -44,11 +50,39 @@ const SimpleContainer = () => {
                   <b>Fournisseurs</b>
                 </Grid>
               </Item>
-              <Fournisseur>
-                <Grid item xs={12}>
-                  ddd
-                </Grid>
-              </Fournisseur>
+              <Box>
+                <Autocomplete
+                  disablePortal
+                  id='combo-box-demo'
+                  options={[
+                    { label: "The Shawshank Redemption", year: 1994 },
+                    { label: "The Godfather", year: 1972 },
+                    { label: "The Godfather: Part II", year: 1974 },
+                    { label: "The Dark Knight", year: 2008 },
+                  ]}
+                  sx={{ marginTop: 2, marginBottom: 2 }}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label='Tapez ici...'
+                      variant='standard'
+                    />
+                  )}
+                />
+              </Box>
+
+              {[
+                "Fournisseur #1",
+                "Fournisseur #2",
+                "Fournisseur #3",
+                "Fournisseur #4",
+              ].map((item) => (
+                <Fournisseur>
+                  <Grid item xs={12}>
+                    {item}
+                  </Grid>
+                </Fournisseur>
+              ))}
             </Grid>
             <Grid item xs={8}>
               <Detail>xs=4</Detail>
