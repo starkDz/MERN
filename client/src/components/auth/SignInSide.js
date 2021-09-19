@@ -17,7 +17,7 @@ import SignUp from "./SignUp";
 import Home from "../layout/Home";
 import FaceOutlinedIcon from "@material-ui/icons/FaceOutlined";
 import Cookies from "universal-cookie";
-
+import { globaleTheme } from "../../default/theme";
 function Copyright(props) {
   return (
     <Typography
@@ -35,9 +35,6 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-const theme = createTheme();
-
 export default function SignInSide() {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -70,7 +67,7 @@ export default function SignInSide() {
     ReactDOM.render(<SignUp />, document.getElementById("root"));
   };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={globaleTheme}>
       <Grid container component='main' sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
@@ -141,7 +138,7 @@ export default function SignInSide() {
                 type='submit'
                 fullWidth
                 variant='contained'
-                style={{ background: "#232369", height: 50 }}
+                style={{ height: 50 }}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In

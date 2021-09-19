@@ -1,7 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
-const Fournisseur = () => <div>Fournisseurs</div>;
+import SimpleConntainer from "./components";
+const Fournisseur = () => <SimpleConntainer />;
 
 export default {
   routeProps: {

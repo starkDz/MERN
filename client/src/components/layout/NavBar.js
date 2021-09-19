@@ -25,6 +25,8 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SignInSide from "../auth/SignInSide";
 import modules from "../../modules";
+import { ThemeProvider } from "@mui/material/styles";
+import { globaleTheme } from "../../default/theme";
 const drawerWidth = 220;
 
 const openedMixin = (theme) => ({
@@ -107,137 +109,133 @@ export default function MiniDrawer() {
 
   return (
     <Router>
-      <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <AppBar
-          position='fixed'
-          open={open}
-          style={{ background: "#232369" }}
-          enableColorOnDark
-        >
-          <Toolbar>
-            <IconButton
-              color='inherit'
-              aria-label='open drawer'
-              onClick={handleDrawerOpen}
-              edge='start'
-              sx={{
-                marginRight: "36px",
-                ...(open && { display: "none" }),
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Box sx={{ flexGrow: 1 }} />
-            <Typography variant='h6' noWrap component='div'>
-              Gestion Materiels Informatiques
-            </Typography>
+      <ThemeProvider theme={globaleTheme}>
+        <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <AppBar position='fixed' open={open} enableColorOnDark>
+            <Toolbar>
+              <IconButton
+                color='inherit'
+                aria-label='open drawer'
+                onClick={handleDrawerOpen}
+                edge='start'
+                sx={{
+                  marginRight: "36px",
+                  ...(open && { display: "none" }),
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Box sx={{ flexGrow: 1 }} />
+              <Typography variant='h6' noWrap component='div'>
+                Gestion Materiels Informatiques
+              </Typography>
 
-            <Box sx={{ flexGrow: 1 }} />
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <IconButton
-                size='large'
-                aria-label='show 4 new mails'
-                color='inherit'
-              >
-                <Badge badgeContent={4} color='error'>
-                  <MailOutlineOutlinedIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                size='large'
-                aria-label='show 17 new notifications'
-                color='inherit'
-              >
-                <Badge badgeContent={17} color='error'>
-                  <NotificationsActiveOutlinedIcon />
-                </Badge>
-              </IconButton>
-              <IconButton
-                size='large'
-                edge='end'
-                aria-label='account of current user'
-                aria-haspopup='true'
-                color='inherit'
-              >
-                <AccountCircleOutlinedIcon />
-              </IconButton>
-              <Box style={{ width: 20 }}></Box>
-              <IconButton
-                size='large'
-                aria-label='show more'
-                aria-haspopup='true'
-                color='inherit'
-                onClick={signOut}
-              >
-                <ExitToAppIcon />
-              </IconButton>
-            </Box>
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size='large'
-                aria-label='show more'
-                aria-haspopup='true'
-                color='inherit'
-              >
-                <MoreIcon />
-              </IconButton>
-            </Box>
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size='large'
-                aria-label='show more'
-                aria-haspopup='true'
-                color='inherit'
-                onClick={signOut}
-              >
-                <ExitToAppIcon />
-              </IconButton>
-            </Box>
-          </Toolbar>
-        </AppBar>
-        {/* {renderMobileMenu}
-      {renderMenu} */}
-        <Drawer variant='permanent' open={open}>
-          <DrawerHeader
-            style={
-              {
-                // height: "calc(100% - 64px)",
-              }
-            }
-          >
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "rtl" ? (
-                <ChevronRightIcon />
-              ) : (
-                <ChevronLeftIcon />
-              )}
-            </IconButton>
-          </DrawerHeader>
-          <List>
-            {modules.map(
-              (
-                module // with a name, and routes
-              ) => (
-                <Tooltip
-                  title={module.name}
-                  key={module.name}
-                  placement='right'
+              <Box sx={{ flexGrow: 1 }} />
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                <IconButton
+                  size='large'
+                  aria-label='show 4 new mails'
+                  color='inherit'
                 >
-                  <ListItem
-                    button
+                  <Badge badgeContent={4} color='error'>
+                    <MailOutlineOutlinedIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton
+                  size='large'
+                  aria-label='show 17 new notifications'
+                  color='inherit'
+                >
+                  <Badge badgeContent={17} color='error'>
+                    <NotificationsActiveOutlinedIcon />
+                  </Badge>
+                </IconButton>
+                <IconButton
+                  size='large'
+                  edge='end'
+                  aria-label='account of current user'
+                  aria-haspopup='true'
+                  color='inherit'
+                >
+                  <AccountCircleOutlinedIcon />
+                </IconButton>
+                <Box style={{ width: 20 }}></Box>
+                <IconButton
+                  size='large'
+                  aria-label='show more'
+                  aria-haspopup='true'
+                  color='inherit'
+                  onClick={signOut}
+                >
+                  <ExitToAppIcon />
+                </IconButton>
+              </Box>
+              <Box sx={{ display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size='large'
+                  aria-label='show more'
+                  aria-haspopup='true'
+                  color='inherit'
+                >
+                  <MoreIcon />
+                </IconButton>
+              </Box>
+              <Box sx={{ display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size='large'
+                  aria-label='show more'
+                  aria-haspopup='true'
+                  color='inherit'
+                  onClick={signOut}
+                >
+                  <ExitToAppIcon />
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </AppBar>
+          {/* {renderMobileMenu}
+      {renderMenu} */}
+          <Drawer variant='permanent' open={open}>
+            <DrawerHeader
+              style={
+                {
+                  // height: "calc(100% - 64px)",
+                }
+              }
+            >
+              <IconButton onClick={handleDrawerClose}>
+                {theme.direction === "rtl" ? (
+                  <ChevronRightIcon />
+                ) : (
+                  <ChevronLeftIcon />
+                )}
+              </IconButton>
+            </DrawerHeader>
+            <List>
+              {modules.map(
+                (
+                  module // with a name, and routes
+                ) => (
+                  <Tooltip
+                    title={module.name}
                     key={module.name}
-                    component={Link}
-                    to={module.routeProps.path}
+                    placement='right'
                   >
-                    <ListItemIcon>{module.icon}</ListItemIcon>
-                    <ListItemText primary={module.name} />
-                  </ListItem>
-                </Tooltip>
-              )
-            )}
-          </List>
-          {/* <Divider />
+                    <ListItem
+                      button
+                      key={module.name}
+                      component={Link}
+                      to={module.routeProps.path}
+                    >
+                      <ListItemIcon>{module.icon}</ListItemIcon>
+                      <ListItemText primary={module.name} />
+                    </ListItem>
+                  </Tooltip>
+                )
+              )}
+            </List>
+            {/* <Divider />
           <List>
             {["All mail", "Trash", "Spam"].map((text, index) => (
               <ListItem button key={text}>
@@ -248,17 +246,18 @@ export default function MiniDrawer() {
               </ListItem>
             ))}
           </List> */}
-        </Drawer>
-        <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
-          <DrawerHeader />
-          <main>
-            <div />
-            {modules.map((module) => (
-              <Route {...module.routeProps} key={module.name} />
-            ))}
-          </main>
+          </Drawer>
+          <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
+            <DrawerHeader />
+            <main>
+              <div />
+              {modules.map((module) => (
+                <Route {...module.routeProps} key={module.name} />
+              ))}
+            </main>
+          </Box>
         </Box>
-      </Box>
+      </ThemeProvider>
     </Router>
   );
 }
