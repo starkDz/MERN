@@ -7,7 +7,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -70,7 +70,6 @@ const SimpleContainer = () => {
                   )}
                 />
               </Box>
-
               {[
                 "Fournisseur #1",
                 "Fournisseur #2",
@@ -85,7 +84,7 @@ const SimpleContainer = () => {
               ))}
             </Grid>
             <Grid item xs={8}>
-              <Detail>xs=4</Detail>
+              <Detail>xs=8</Detail>
             </Grid>
           </Grid>
         </Box>
